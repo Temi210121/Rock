@@ -13,7 +13,7 @@ let drawValueTxt = document.querySelector(".score-box .draw h3 span")
 
 let won = 0,lost = 0, draw = 0;
 
-let computerChoices = ["Rock","Paper","Scissors"]
+let computerChoices = ["Rock","Paper","Sissors"]
 
 let outcomes = {
  RockRock:"Draw",
@@ -30,7 +30,7 @@ let outcomes = {
 for(let  i = 0; i < weapons.length;i++) {
     weapons[i].addEventListener("click", (e) => {
         player.src = "./img/rock.png"
-         computer.src = `./img/rock.png`
+         computer.src = '/img/rock.png'
     weaponBox.style.display = "none" ;
     playerChoicesBox.style.display = "block" ;  
     
@@ -48,6 +48,8 @@ for(let  i = 0; i < weapons.length;i++) {
 
         let rondomChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)]
         computer.src = `./img/${rondomChoice}.png`  
+        console.log(rondomChoice);
+        
         
         let userChoice = e.target.parentElement.className;
         let outcomeValue = outcomes[userChoice + rondomChoice]
